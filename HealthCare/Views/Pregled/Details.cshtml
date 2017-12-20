@@ -1,0 +1,54 @@
+﻿@model HealthCare.Models.Pregled
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Pregled</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Naziv)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Naziv)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Opis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Opis)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.LekariPregledi)*@Pregled obavlja:
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Lekar</th>
+                    <th>Participacija</th>
+                </tr>
+                @foreach (var item in Model.LekariPregledi)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Lekar.PunoIme)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Participacija)
+                        </td>
+                    </tr>
+                }
+            </table>
+</dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.PregledID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

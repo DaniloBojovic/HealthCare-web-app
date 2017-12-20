@@ -1,0 +1,80 @@
+﻿@model HealthCare.Models.Lekar
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Lekar</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        @if (Model.Files.Any(f => f.FileType == FileType.Foto))
+        {
+            <dt>
+                Fotografija
+            </dt>
+            <dd>
+                <img src="~/File?id=@Model.Files.First(f => f.FileType == FileType.Foto).FileId" alt="foto" />
+            </dd>
+        }
+        <dt>
+            @Html.DisplayNameFor(model => model.Prezime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prezime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumZaposlenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumZaposlenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @*@Html.DisplayNameFor(model => model.LekariPregledi)*@Obavlja preglede:
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Naziv pregleda</th>
+                    <th>Participacija</th>
+                </tr>
+                @foreach (var item in Model.LekariPregledi)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Pregled.Naziv)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Participacija)
+                        </td>
+                    </tr>
+                }
+            </table>
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

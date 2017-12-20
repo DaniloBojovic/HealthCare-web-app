@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HealthCare", "HealthCare\HealthCare.csproj", "{4AE989C4-5535-4458-AF7F-E491C9B237AB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DDDE19F2-A19D-4F9C-9976-20F0578D555E}"
+	ProjectSection(SolutionItems) = preProject
+		GrantScript.sql = GrantScript.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AE989C4-5535-4458-AF7F-E491C9B237AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AE989C4-5535-4458-AF7F-E491C9B237AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AE989C4-5535-4458-AF7F-E491C9B237AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AE989C4-5535-4458-AF7F-E491C9B237AB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
